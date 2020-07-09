@@ -51,7 +51,7 @@ scss/...
       _btn
       _text  見出し
       _animation
-      ```
+```
       
 ### メディアクエリ
 ```
@@ -70,7 +70,7 @@ scss/...
       @content;
     }
   }
-  ```
+```
   
 ### ヘルパークラス
   全てのメディアクエリに対して作る
@@ -107,7 +107,7 @@ scss/...
 ## 画像命名ルール
   画像の名前 アンスコ統一 1枚しかなくても01つける
   spは _sp
-  ```
+```
   pagename/
     img_section_01.jpg
     thumb_section_01.jpg 小さめなやつ
@@ -127,5 +127,5 @@ scss/...
     icon_sns_facebook.svg
     icon_sns_line.svg
     icon_header.svg
-    ```
+```
     
