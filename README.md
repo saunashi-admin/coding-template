@@ -2,6 +2,7 @@
 
 ## ディレクトリ構造
 ### 公開フォルダ これはいじらない！
+```
 dist/
   assets/
     css/...
@@ -15,7 +16,9 @@ wp_theme
   index.php
   ※assetsへのアクセスは関数 img
    homeURLにするなら関数に
+```
 ### 開発フォルダ
+```
 src/    
   img/...
   scss/...
@@ -25,6 +28,7 @@ src/
     ※どこまで分けるかは要検討
   meta//// ファビコンなど→distにコピーする
 　(pug/...) pugを使わない場合はフォルダ名をhtml,phpなどにしてdistにコピーする
+```
  
 ## scss
 ### scssファイル構成
