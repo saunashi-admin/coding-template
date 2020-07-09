@@ -81,36 +81,36 @@ scss/...
 `.xs_show`,`.xs_hide`
   
 ### mixin 
-_base.scssに記載する。
-命名はアンスコで統一。
-extendは極力書かない。
-mq
-video
-line-height
-spのみhover
-absoluteで中央寄せ
+- _base.scssに記載する。
+- 命名はアンスコで統一。
+- extendは極力書かない。
+- mq
+- video
+- line-height
+- spのみhover
+- absoluteで中央寄せ
     
 ### reset
-bodyに`line-height`は書かない、_text.scssに書く。
-_reset.scssは末広resetを使用する。
+- bodyに`line-height`は書かない、_text.scssに書く。
+- _reset.scssは末広resetを使用する。
     
 ### 変数
 #### color
-色は基本全て変数にする。
+- 色は基本全て変数にする。
 `color_red_01`
 #### font 
-`_text.scss` に記載
+- `_text.scss` に記載
     
 ### クラス命名
 #### 下層のクラス名
-`ページ名_セクション_block--element`
-bodyに `Page_ページ名` クラスをつける。wordpressはmainにつける。
+- `ページ名_セクション_block--element`
+- bodyに `Page_ページ名` クラスをつける。wordpressはmainにつける。
 #### BEM 
-`sm_show` とかもModifier ハイフンつける。
+- `sm_show` とかもModifier ハイフンつける。
   
 ## 画像命名ルール
-画像の名前 アンスコ統一 1枚しかなくても01つける
-spは `_sp`
+- 画像の名前 アンスコ統一 1枚しかなくても01つける
+- spは `_sp`
 
 ```
   pagename/
