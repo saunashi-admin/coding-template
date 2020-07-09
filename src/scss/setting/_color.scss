@@ -1,0 +1,14 @@
+//color
+$color: (
+  main: #efa336,
+  sub: #e65100,
+  accent: #e65100,
+  txt-black: #333,
+  txt-white: #fff,
+  border-black: #333,
+  border-white: #fff,
+  bg-gray: #efefef,
+);
+@function color($key) {
+  @return map-get($color, $key);
+}

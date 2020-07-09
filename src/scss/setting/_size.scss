@@ -1,0 +1,24 @@
+// $breakpoints: (
+//   "xs": "screen and (min-width: 0px) and (max-width: 374px)",
+//   "sp": "screen and (min-width: 0px) and (max-width: 559px)",
+//   "tab": "screen and (min-width: 0px) and (max-width: 959px)",
+//   "pc": "screen and (min-width: 960px)",
+//   "xl": "screen and (min-width: 1200px)", //inner幅
+//   "ie":
+//     "screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)",
+// ) !default;
+
+$breakpoints: (
+  "xs": "screen and (max-width: 480px)",
+  "sm": "screen and (max-width: 768px)",
+  "md": "screen and (max-width: 1024px)",
+  "lg": "screen and (min-width: 1025px)",
+  "xl": "screen and (min-width: 1280px)", 
+  "se": "screen and (max-width: 320px)",
+  "ie":
+    "screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)",
+) !default;
+
+// ヘッダー高さ
+$header-height: 80px;
+$header-height-sp: 60px;
