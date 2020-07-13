@@ -1,21 +1,21 @@
 //ページトップへ
 //画像にした方が楽？
 .btn-toTop {
-  background-color: #ccc;
-  border: 1px solid #241e1c;
-  cursor: pointer;
-  height: 63px;
-  position: absolute;
-  right: 25.8px;
-  text-align: center;
-  top: -62px;
-  width: 63px;
-  z-index: z-index(btn-toTop);
-  &:hover {
-    opacity: 0.6;
-  }
-  @include mq("lg") {
-    bottom: 0;
-    right: 0;
-  }
+	background-color: #ccc;
+	border: 1px solid #241e1c;
+	cursor: pointer;
+	height: 63px;
+	position: absolute;
+	right: 25.8px;
+	text-align: center;
+	top: -62px;
+	width: 63px;
+	z-index: z-index(btn-toTop);
+	&:hover {
+		opacity: 0.6;
+	}
+	@include mq("lg") {
+		bottom: 0;
+		right: 0;
+	}
 }

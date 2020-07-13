@@ -57,7 +57,7 @@
 /*******************
 遅れてふわっと
 *******************/
-/** 
+/**
 .effect js発火用
 .fadeIn_upなど アニメーション
 .delay スピード
@@ -65,119 +65,119 @@
 
 /* 画面外にいる状態 */
 .effect-target {
-  &.-fadein {
-    opacity: 0;
-    transition: all 800ms;
-    &_up {
-      @extend .-fadein;
-      transform: translate(0, 50px);
-    }
-    &_down {
-      @extend .-fadein;
-      transform: translate(0, -50px);
-    }
-    &_right {
-      @extend .-fadein;
-      transform: translate(50px, 0);
-    }
-    &_left {
-      @extend .-fadein;
-      transform: translate(-50px, 0);
-    }
-    /* 画面内に入った状態 */
-    &.-action {
-      opacity: 1;
-      transform: translate(0, 0);
-    }
-  }
+	&.-fadein {
+		opacity: 0;
+		transition: all 800ms;
+		&_up {
+			@extend .-fadein;
+			transform: translate(0, 50px);
+		}
+		&_down {
+			@extend .-fadein;
+			transform: translate(0, -50px);
+		}
+		&_right {
+			@extend .-fadein;
+			transform: translate(50px, 0);
+		}
+		&_left {
+			@extend .-fadein;
+			transform: translate(-50px, 0);
+		}
+		/* 画面内に入った状態 */
+		&.-action {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+	}
 
-  &.-layerin {
-    position: relative;
-    &:before {
-      content: "";
-      display: block;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      transform: translate3d(0, 0, 0);
-      transition: width 500ms linear;
-    }
-    &_left,
-    &_right {
-      @extend .-layerin;
-      width: 100%;
-      &.-action {
-        &:before {
-          width: 0;
-        }
-      }
-    }
-    &_left {
-      left: 0;
-    }
-    &_right {
-      right: 0;
-    }
+	&.-layerin {
+		position: relative;
+		&:before {
+			content: "";
+			display: block;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			transform: translate3d(0, 0, 0);
+			transition: width 500ms linear;
+		}
+		&_left,
+		&_right {
+			@extend .-layerin;
+			width: 100%;
+			&.-action {
+				&:before {
+					width: 0;
+				}
+			}
+		}
+		&_left {
+			left: 0;
+		}
+		&_right {
+			right: 0;
+		}
 
-    &_black {
-      &:before {
-        background-color: #091523;
-      }
-    }
+		&_black {
+			&:before {
+				background-color: #091523;
+			}
+		}
 
-    &_white {
-      &:before {
-        background-color: #fff;
-      }
-    }
+		&_white {
+			&:before {
+				background-color: #fff;
+			}
+		}
 
-    &_darkBlue {
-      &:before {
-        background-color: color(bg-darkBlue);
-      }
-    }
-    // &_darkBlue_img {
-    //   background-image: url("../img/common/bg-darkBlue.jpg");
-    // }
+		&_darkBlue {
+			&:before {
+				background-color: color(bg-darkBlue);
+			}
+		}
+		// &_darkBlue_img {
+		//   background-image: url("../img/common/bg-darkBlue.jpg");
+		// }
 
-    // &_easeOut {
-    //   transition: all 800ms cubic-bezier(0.64, 0.25, 0.81, 0.43);
-    // }
-  }
+		// &_easeOut {
+		//   transition: all 800ms cubic-bezier(0.64, 0.25, 0.81, 0.43);
+		// }
+	}
 
-  &.-txtin {
-    display: inline-block;
-    opacity: 0;
-    overflow: hidden;
-    transform: translate3d(0, 0, 0);
-    transition: all 1s linear;
-    //display:inline;だとダメ
-    white-space: nowrap;
-    max-width: 0;
-    &.-action {
-      opacity: 1;
-      max-width: 100%;
-    }
-  }
+	&.-txtin {
+		display: inline-block;
+		opacity: 0;
+		overflow: hidden;
+		transform: translate3d(0, 0, 0);
+		transition: all 1s linear;
+		//display:inline;だとダメ
+		white-space: nowrap;
+		max-width: 0;
+		&.-action {
+			opacity: 1;
+			max-width: 100%;
+		}
+	}
 
-  &.-delay {
-    &_sp {
-      transition-delay: 200ms !important;
-    }
-    @for $i from 1 through 50 {
-      &_#{$i} {
-        @extend .-delay_sp;
-        @include mq("lg") {
-          transition-delay: #{$i * 100}ms !important;
-        }
-      }
-    }
-    // &_1 {
-    //   @extend .-delay_sp;
-    //   @include mq("lg") {
-    //     transition-delay: 100ms;
-    //   }
-    // }
-  }
+	&.-delay {
+		&_sp {
+			transition-delay: 200ms !important;
+		}
+		@for $i from 1 through 50 {
+			&_#{$i} {
+				@extend .-delay_sp;
+				@include mq("lg") {
+					transition-delay: #{$i * 100}ms !important;
+				}
+			}
+		}
+		// &_1 {
+		//   @extend .-delay_sp;
+		//   @include mq("lg") {
+		//     transition-delay: 100ms;
+		//   }
+		// }
+	}
 }

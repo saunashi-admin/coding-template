@@ -1,76 +1,76 @@
 * {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
 }
 //html font-size は_font.scss
 body {
-  color: color(txt-black);
-  font-family: $ff-gothic;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  position: relative;
-  // line-height: 1.75;
-  // letter-spacing: 0.01em;
-  width: 100%;
+	color: color(txt-black);
+	font-family: $ff-gothic;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+	position: relative;
+	// line-height: 1.75;
+	// letter-spacing: 0.01em;
+	width: 100%;
 }
 img {
-  border-style: none;
-  height: auto;
-  width: 100%;
-  vertical-align: bottom;
-  [data-objectfit='cover'] {
-    object-fit: cover;
-  }
+	border-style: none;
+	height: auto;
+	width: 100%;
+	vertical-align: bottom;
+	[data-objectfit="cover"] {
+		object-fit: cover;
+	}
 }
 iframe,
 video {
-  width: 100%;
+	width: 100%;
 }
 table {
-  text-align: left;
+	text-align: left;
 }
 //PCではtelリンク無効
-@include mq('lg') {
-  a[href*='tel:'] {
-    pointer-events: none;
-    cursor: default;
-    text-decoration: none;
-  }
+@include mq("lg") {
+	a[href*="tel:"] {
+		pointer-events: none;
+		cursor: default;
+		text-decoration: none;
+	}
 }
 
 // 共通アセット
 %inner {
-  margin: 0 auto;
-  padding: 0 15px;
-  @include mq('lg') {
-    max-width: calc(1100px + 60px); //デザイン＋左右padding
-    padding: 0 30px;
-  }
-  &.-narrow {
-    padding: 0 15px;
-    @include mq('lg') {
-      max-width: calc(750px + 60px); //デザイン＋左右padding
-      padding: 0 30px;
-    }
-  }
+	margin: 0 auto;
+	padding: 0 15px;
+	@include mq("lg") {
+		max-width: calc(1100px + 60px); //デザイン＋左右padding
+		padding: 0 30px;
+	}
+	&.-narrow {
+		padding: 0 15px;
+		@include mq("lg") {
+			max-width: calc(750px + 60px); //デザイン＋左右padding
+			padding: 0 30px;
+		}
+	}
 }
 %heading {
-  font-size: rem(24);
-  @include lineHeightCrop(1.75);
+	font-size: rem(24);
+	@include lineHeightCrop(1.75);
 }
 %txt {
-  font-size: rem(16);
-  letter-spacing: 0.1em;
-  line-height: 1.75;
-  @include lineHeightCrop(1.75);
+	font-size: rem(16);
+	letter-spacing: 0.1em;
+	line-height: 1.75;
+	@include lineHeightCrop(1.75);
 }
 %txt-hover {
-  transition: all 0.3s;
-  &:hover {
-    opacity: 0.6;
-  }
+	transition: all 0.3s;
+	&:hover {
+		opacity: 0.6;
+	}
 }
 %btn-hover {
 }
@@ -79,101 +79,101 @@ table {
 // 表示・非表示
 //~480px
 .xs {
-  &_show {
-    display: none !important;
-    @include mq('xs') {
-      display: block !important;
-    }
-  }
-  &_hide {
-    display: block !important;
-    @include mq('xs') {
-      display: none !important;
-    }
-  }
+	&_show {
+		display: none !important;
+		@include mq("xs") {
+			display: block !important;
+		}
+	}
+	&_hide {
+		display: block !important;
+		@include mq("xs") {
+			display: none !important;
+		}
+	}
 }
 //~768
 .sm {
-  &_show {
-    display: none !important;
-    @include mq('sm') {
-      display: block !important;
-    }
-  }
-  &_hide {
-    display: block !important;
-    @include mq('sm') {
-      display: none !important;
-    }
-  }
+	&_show {
+		display: none !important;
+		@include mq("sm") {
+			display: block !important;
+		}
+	}
+	&_hide {
+		display: block !important;
+		@include mq("sm") {
+			display: none !important;
+		}
+	}
 }
 //~1024
 .md {
-  &_show {
-    display: none !important;
-    @include mq('md') {
-      display: block !important;
-    }
-  }
-  &_hide {
-    display: block !important;
-    @include mq('md') {
-      display: none !important;
-    }
-  }
+	&_show {
+		display: none !important;
+		@include mq("md") {
+			display: block !important;
+		}
+	}
+	&_hide {
+		display: block !important;
+		@include mq("md") {
+			display: none !important;
+		}
+	}
 }
 //1025~
 .lg {
-  &_show {
-    display: none !important;
-    @include mq('lg') {
-      display: block !important;
-    }
-  }
-  &_hide {
-    display: block !important;
-    @include mq('lg') {
-      display: none !important;
-    }
-  }
+	&_show {
+		display: none !important;
+		@include mq("lg") {
+			display: block !important;
+		}
+	}
+	&_hide {
+		display: block !important;
+		@include mq("lg") {
+			display: none !important;
+		}
+	}
 }
 //1280~
 .xl {
-  &-show {
-    display: none !important;
-    @include mq('xl') {
-      display: block !important;
-    }
-  }
-  &-hide {
-    display: block !important;
-    @include mq('xl') {
-      display: none !important;
-    }
-  }
+	&-show {
+		display: none !important;
+		@include mq("xl") {
+			display: block !important;
+		}
+	}
+	&-hide {
+		display: block !important;
+		@include mq("xl") {
+			display: none !important;
+		}
+	}
 }
 
 //テキスト関係クラス
 .fw-bold {
-  font-weight: bold !important;
+	font-weight: bold !important;
 }
 .ta-center {
-  text-align: center !important;
+	text-align: center !important;
 }
 .ta-right {
-  text-align: right !important;
+	text-align: right !important;
 }
 .ta-left {
-  text-align: left !important;
+	text-align: left !important;
 }
 
 %txt-indent {
-  //全部下げる
-  padding-left: 1em;
-  text-indent: -1em;
+	//全部下げる
+	padding-left: 1em;
+	text-indent: -1em;
 
-  //一行目だけ下げる
-  &-first {
-    text-indent: 1em;
-  }
+	//一行目だけ下げる
+	&-first {
+		text-indent: 1em;
+	}
 }
