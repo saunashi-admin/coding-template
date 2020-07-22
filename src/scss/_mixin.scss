@@ -6,7 +6,7 @@
 }
 
 //タイトルだけ。本文は絶対値でいい
-@mixin perfect-vw($max-width, $min-width, $max-size, $min-size, $property) {
+@mixin perfect_vw($max-width, $min-width, $max-size, $min-size, $property) {
 	$a: ($max-size - $min-size) / ($max-width - $min-width);
 	$b: ($a * 100) + vw;
 	$c: ($min-size - $a * $min-width) + px;
@@ -18,20 +18,9 @@
 		#{$property}: $max-size + px;
 	}
 }
-// @include perfect-vw(1200, 320, 60, 14, font-size);
+// @include perfect_vw(1200, 320, 60, 14, font-size);
 
-@mixin root-hover($el) {
-	@at-root {
-		#{selector-replace(&,$el,$el+':hover')} {
-			@content;
-		}
-	}
-}
-//@include root-hover('#test') {
-//   background-color: #487a22;
-// }
-
-@mixin responsive-box($paddingTop) {
+@mixin responsive_box($paddingTop) {
 	position: relative;
 	padding-top: ($paddingTop) * 1%;
 	& > * {
@@ -47,11 +36,11 @@
 //   max-width: 750px;
 // }
 // .video_wrap {
-//   @include responsive-box(56);
+//   @include responsive_box(56);
 // }
 
 //line-heightの上下カット
-@mixin lineHeightCrop($line-height) {
+@mixin lineHeight_crop($line-height) {
 	line-height: #{$line-height};
 	&::before {
 		display: block;
@@ -69,7 +58,7 @@
 	}
 }
 // p {
-//   @include lineHeightCrop(1.75);
+//   @include lineHeight_crop(1.75);
 // }
 
 @mixin inner($max-width: 1100) {

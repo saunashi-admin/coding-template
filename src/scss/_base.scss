@@ -5,7 +5,7 @@
 }
 //html font-size は_font.scss
 body {
-	color: color(txt-black);
+	color: $colorTextDefault;
 	font-family: $ff-gothic;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -38,41 +38,6 @@ table {
 		cursor: default;
 		text-decoration: none;
 	}
-}
-
-// 共通アセット
-%inner {
-	margin: 0 auto;
-	padding: 0 15px;
-	@include mq("lg") {
-		max-width: calc(1100px + 60px); //デザイン＋左右padding
-		padding: 0 30px;
-	}
-	&.-narrow {
-		padding: 0 15px;
-		@include mq("lg") {
-			max-width: calc(750px + 60px); //デザイン＋左右padding
-			padding: 0 30px;
-		}
-	}
-}
-%heading {
-	font-size: rem(24);
-	@include lineHeightCrop(1.75);
-}
-%txt {
-	font-size: rem(16);
-	letter-spacing: 0.1em;
-	line-height: 1.75;
-	@include lineHeightCrop(1.75);
-}
-%txt-hover {
-	transition: all 0.3s;
-	&:hover {
-		opacity: 0.6;
-	}
-}
-%btn-hover {
 }
 
 //ヘルパークラス
@@ -165,15 +130,4 @@ table {
 }
 .ta-left {
 	text-align: left !important;
-}
-
-%txt-indent {
-	//全部下げる
-	padding-left: 1em;
-	text-indent: -1em;
-
-	//一行目だけ下げる
-	&-first {
-		text-indent: 1em;
-	}
 }

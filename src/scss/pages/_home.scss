@@ -18,11 +18,11 @@
 		text-align: center;
 		&_main {
 			font-size: 50px;
-			@include lineHeightCrop(1.75);
+			@include lineHeight_crop(1.75);
 		}
 		&_sub {
 			font-size: 30px;
-			@include lineHeightCrop(1.75);
+			@include lineHeight_crop(1.75);
 		}
 	}
 }
@@ -46,12 +46,11 @@
 		max-width: 55%;
 	}
 	&--ttl {
-		@extend %heading;
 	}
 	&_desc {
 		margin-top: 20px;
 		&--txt {
-			@extend %txt;
+			// @extend %txt;
 		}
 	}
 	&--img {
@@ -68,12 +67,11 @@
 		@include inner(1100);
 	}
 	&--ttl {
-		@extend %heading;
 	}
 	&_desc {
 		margin-top: 20px;
 		&--txt {
-			@extend %txt;
+			// @extend %txt;
 		}
 	}
 	&--img {
@@ -92,7 +90,6 @@
 		@include inner(1100);
 	}
 	&--ttl {
-		@extend %heading;
 	}
 	&--img {
 		margin: 20px calc(50% - 50vw) 0;
@@ -102,7 +99,7 @@
 	&_desc {
 		margin-top: 20px;
 		&--txt {
-			@extend %txt;
+			// @extend %txt;
 		}
 	}
 }

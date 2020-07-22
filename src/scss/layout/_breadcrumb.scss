@@ -3,19 +3,18 @@
 	position: absolute;
 	top: 30px;
 	&-home {
-		background: url("../img/icon-home@2x.png");
-		background-size: cover;
+		background: transparent url(../img/) no-repeat top center / contain;
 		height: 13px;
 		width: 12px;
 	}
 	&-item {
-		color: color(txt-black);
+		color: $colorTextDefault;
 		font-weight: bold;
 		position: relative;
 		& + .bread-item {
 			margin-left: 44px;
 			&:before {
-				border: solid color(txt-black);
+				border: solid $colorTextDefault;
 				border-width: 0 1px 1px 0;
 				content: "";
 				display: block;

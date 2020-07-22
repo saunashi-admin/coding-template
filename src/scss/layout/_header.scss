@@ -198,7 +198,7 @@
 				.item-link {
 					display: block;
 					padding: 20px 25px;
-					@extend %txt-hover;
+					// @extend %txt-hover;
 					@include mq("xl") {
 						padding: 20px 25px;
 					}
@@ -209,7 +209,7 @@
 				}
 
 				&-contact {
-					background-color: color(sub);
+					// background-color: color(sub);
 					color: #fff;
 				}
 			}
@@ -280,14 +280,14 @@
 					display: block;
 					padding: 20px 25px;
 					color: #000;
-					@extend %txt-hover;
+					// @extend %txt-hover;
 					&.-active {
 						color: red;
 					}
 				}
 
 				&-contact {
-					background-color: color(sub);
+					// background-color: color(sub);
 					color: #fff;
 				}
 			}

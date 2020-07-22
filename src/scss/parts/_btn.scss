@@ -1,89 +1,44 @@
 /******************
 ボタン
-<a class="btn">
-  <span class="btn_txt"></span>
+<a class="Blockname--btn">
+  <span class="Blockname--btn_txt"></span>
 </a>
 ******************/
 
-/*<a>にクラスつける*/
-%btn {
+@mixin btn() {
+	display: inline-flex;
 	align-items: center;
-	//デフォルトカラー
+	justify-content: center;
+	transition: opacity 0.5s ease-out;
+	max-width: 100%;
+	//デフォルトcolor
+	color: #333;
 	background-color: #fff;
 	border: 1px solid transparent;
-	color: #333;
-	display: flex;
-	justify-content: center;
-	max-width: 100%;
-	transition: opacity 0.5s ease-out;
-	width: 100%;
+	//デフォルトsize
+	width: 300px;
+
+	&:focus,
 	&:hover {
 		opacity: 0.6;
 	}
-	@include mq("lg") {
-		width: 350px;
-	}
-
 	.btn_txt {
 		display: inline-block;
 		font-family: $ff-mincho;
 		position: relative;
 	}
-}
-
-//size
-%btn {
-	&.-small {
+	//modifier
+	//color 有意な名前に
+	&.-color_primary {
 	}
-
-	&.-medium {
+	//size
+	&.-size_large {
 	}
-
-	&.-large {
-	}
-}
-
-//color
-%btn {
-	//有意な名前に
-	&.-submit {
-	}
-}
-
-//icon
-%btn {
-	&.-tab {
-		position: relative;
+	//icon
+	&.-icon_tab {
 		&:after {
-			background: transparent url(../img/icon-tab.svg) no-repeat top center /
-				contain;
 			content: "";
-			display: block;
-			height: 11px;
-			position: absolute;
-			right: -21px;
-			top: 50%;
-			transform: translateY(-50%);
-			width: 11px;
-		}
-	}
-	&.arrow-bottom {
-		position: relative;
-		&:after {
-			background: transparent url(../img/icon-arrow-bottom.svg) no-repeat top
-				center / contain;
-			bottom: 8.8px;
-			content: "";
-			display: block;
-			height: 5.68px;
-			left: 50%;
-			position: absolute;
-			transform: translateX(-50%);
-			width: 12px;
-		}
-		&:hover {
-			&:after {
-			}
+			display: inline-block;
 		}
 	}
 }
