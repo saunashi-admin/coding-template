@@ -100,7 +100,9 @@ scss/...
 `color_red_01`
 #### font 
 - `_font.scss` にフォント設定、フォントmixin
+	font-familyを変数に。$ff-フォント名。font-weightやletter-spacing等よく使う組み合わせはmixinにする。xdでいう「アセット」
 - `_text.scss` にはモジュールとしてのテキスト
+　`_font.scss`で作ったフォント組み合わせmixinを呼び出し、それに適宜スタイルを書き足してモジュールを作る。
     
 ### クラス命名
 #### 下層のクラス名
