@@ -37,25 +37,9 @@
 /** 背景のアニメーション **/
 
 /* 共通 */
-// .fadeInDown {
-//   animation-fill-mode: both;
-//   animation-duration: 3s;
-//   visibility: visible !important;
-//   animation-name: fadeInDown;
-// }
-// @keyframes fadeInDown {
-//   0% {
-//     opacity: 0;
-//     transform: translateY(-1000px);
-//   }
-//   100% {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
 
 /*******************
-遅れてふわっと
+フェードイン
 *******************/
 /**
 .effect js発火用
@@ -119,26 +103,16 @@
 		&_right {
 			right: 0;
 		}
-
 		&_black {
 			&:before {
 				background-color: #091523;
 			}
 		}
-
 		&_white {
 			&:before {
 				background-color: #fff;
 			}
 		}
-
-		// &_darkBlue_img {
-		//   background-image: url("../img/common/bg-darkBlue.jpg");
-		// }
-
-		// &_easeOut {
-		//   transition: all 800ms cubic-bezier(0.64, 0.25, 0.81, 0.43);
-		// }
 	}
 
 	&.-txtin {
@@ -155,24 +129,16 @@
 			max-width: 100%;
 		}
 	}
-
-	&.-delay {
-		&_sp {
+}
+&.-delay {
+	&_sp {
+		@include mq("md") {
 			transition-delay: 200ms !important;
 		}
-		@for $i from 1 through 50 {
-			&_#{$i} {
-				@extend .-delay_sp;
-				@include mq("lg") {
-					transition-delay: #{$i * 100}ms !important;
-				}
-			}
+	}
+	@for $i from 1 through 50 {
+		&_#{$i} {
+			transition-delay: #{$i * 100}ms !important;
 		}
-		// &_1 {
-		//   @extend .-delay_sp;
-		//   @include mq("lg") {
-		//     transition-delay: 100ms;
-		//   }
-		// }
 	}
 }

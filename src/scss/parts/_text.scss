@@ -19,7 +19,7 @@
 }
 //spはhover効果無効
 @mixin hover($flag: true) {
-	@include mq(lg) {
+	@include mq("lg") {
 		transition: 0.4s;
 		&:hover {
 			@if $flag == true {

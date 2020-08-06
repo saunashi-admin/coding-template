@@ -3,17 +3,19 @@
 	font-size: inherit;
 	line-height: inherit;
 }
-//html font-size は_font.scss
+html {
+	overflow: auto;
+}
 body {
-	color: $colorTextDefault;
-	font-family: $ff-gothic;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 	overflow-x: hidden;
 	position: relative;
-	// line-height: 1.75;
-	// letter-spacing: 0.01em;
 	width: 100%;
+	color: color(txt-black);
+	font-family: $ff-gothic;
 }
 img {
 	border-style: none;

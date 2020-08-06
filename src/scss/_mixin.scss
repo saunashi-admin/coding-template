@@ -20,6 +20,12 @@
 }
 // @include perfect_vw(1200, 320, 60, 14, font-size);
 
+@mixin se_vw($sp-size, $sp-width:375, $property:font-size) {
+  @include mq('se') {
+    #{$property}: calc((#{$sp-size} / #{$sp-width}) * 100vw);
+  }
+}
+
 @mixin responsive_box($paddingTop) {
 	position: relative;
 	padding-top: ($paddingTop) * 1%;
