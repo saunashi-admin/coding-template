@@ -122,6 +122,7 @@ scss/...
     bg_　背景のレイヤー
     obj_ 背景のオブジェクト
     fig_section_01.jpg 図形、グラフ
+		illust_
     kv.jpg
     kv_sp.jpg
     child/... 下層フォルダ
