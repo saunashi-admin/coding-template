@@ -1,6 +1,7 @@
 * {
 	font-family: inherit;
 	font-size: inherit;
+	font-weight: inherit;
 	line-height: inherit;
 }
 html {
@@ -30,6 +31,13 @@ iframe,
 video {
 	width: 100%;
 }
+div,
+span {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
 table {
 	text-align: left;
 }
@@ -43,81 +51,83 @@ table {
 }
 
 //ヘルパークラス
-// 表示・非表示
+// 改行 表示・非表示
 //~480px
-.xs {
-	&_show {
-		display: none !important;
-		@include mq("xs") {
-			display: block !important;
-		}
-	}
-	&_hide {
-		display: block !important;
-		@include mq("xs") {
-			display: none !important;
-		}
-	}
-}
-//~768
-.sm {
-	&_show {
-		display: none !important;
-		@include mq("sm") {
-			display: block !important;
-		}
-	}
-	&_hide {
-		display: block !important;
-		@include mq("sm") {
-			display: none !important;
-		}
-	}
-}
-//~1024
-.md {
-	&_show {
-		display: none !important;
-		@include mq("md") {
-			display: block !important;
-		}
-	}
-	&_hide {
-		display: block !important;
-		@include mq("md") {
-			display: none !important;
-		}
-	}
-}
-//1025~
-.lg {
-	&_show {
-		display: none !important;
-		@include mq("lg") {
-			display: block !important;
-		}
-	}
-	&_hide {
-		display: block !important;
-		@include mq("lg") {
-			display: none !important;
-		}
-	}
-}
-//1280~
-.xl {
-	&-show {
-		display: none !important;
-		@include mq("xl") {
-			display: block !important;
-		}
-	}
-	&-hide {
-		display: block !important;
-		@include mq("xl") {
-			display: none !important;
-		}
-	}
+br {
+  &.xs {
+    &_show {
+      display: none !important;
+      @include mq('xs') {
+        display: inline-block !important;
+      }
+    }
+    &_hide {
+      display: inline-block !important;
+      @include mq('xs') {
+        display: none !important;
+      }
+    }
+  }
+  //~768
+  &.sm {
+    &_show {
+      display: none !important;
+      @include mq('sm') {
+        display: inline-block !important;
+      }
+    }
+    &_hide {
+      display: inline-block !important;
+      @include mq('sm') {
+        display: none !important;
+      }
+    }
+  }
+  //~1024
+  &.md {
+    &_show {
+      display: none !important;
+      @include mq('md') {
+        display: inline-block !important;
+      }
+    }
+    &_hide {
+      display: inline-block !important;
+      @include mq('md') {
+        display: none !important;
+      }
+    }
+  }
+  //1025~
+  &.lg {
+    &_show {
+      display: none !important;
+      @include mq('lg') {
+        display: inline-block !important;
+      }
+    }
+    &_hide {
+      display: inline-block !important;
+      @include mq('lg') {
+        display: none !important;
+      }
+    }
+  }
+  //1280~
+  &.xl {
+    &-show {
+      display: none !important;
+      @include mq('xl') {
+        display: block !important;
+      }
+    }
+    &-hide {
+      display: block !important;
+      @include mq('xl') {
+        display: none !important;
+      }
+    }
+  }
 }
 
 //テキスト関係クラス
