@@ -114,6 +114,16 @@ select {
 	cursor: pointer;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	//safariのplaceholderずれ
+	&::-webkit-input-placeholder {
+		padding-top: 0.25em;
+	}
+}
+
 select::-ms-expand {
 	display: none;
 }
