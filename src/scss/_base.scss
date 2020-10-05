@@ -33,13 +33,21 @@ video {
 }
 div,
 span {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
 }
 table {
 	text-align: left;
+}
+//タブ操作時以外はoutline非表示
+a,
+button {
+	&:hover,
+	&:active {
+		outline-width: 0;
+	}
 }
 //PCではtelリンク無効
 @include mq("lg") {
@@ -54,80 +62,80 @@ table {
 // 改行 表示・非表示
 //~480px
 br {
-  &.xs {
-    &_show {
-      display: none !important;
-      @include mq('xs') {
-        display: inline-block !important;
-      }
-    }
-    &_hide {
-      display: inline-block !important;
-      @include mq('xs') {
-        display: none !important;
-      }
-    }
-  }
-  //~768
-  &.sm {
-    &_show {
-      display: none !important;
-      @include mq('sm') {
-        display: inline-block !important;
-      }
-    }
-    &_hide {
-      display: inline-block !important;
-      @include mq('sm') {
-        display: none !important;
-      }
-    }
-  }
-  //~1024
-  &.md {
-    &_show {
-      display: none !important;
-      @include mq('md') {
-        display: inline-block !important;
-      }
-    }
-    &_hide {
-      display: inline-block !important;
-      @include mq('md') {
-        display: none !important;
-      }
-    }
-  }
-  //1025~
-  &.lg {
-    &_show {
-      display: none !important;
-      @include mq('lg') {
-        display: inline-block !important;
-      }
-    }
-    &_hide {
-      display: inline-block !important;
-      @include mq('lg') {
-        display: none !important;
-      }
-    }
-  }
-  //1280~
-  &.xl {
-    &-show {
-      display: none !important;
-      @include mq('xl') {
-        display: block !important;
-      }
-    }
-    &-hide {
-      display: block !important;
-      @include mq('xl') {
-        display: none !important;
-      }
-    }
-  }
+	&.xs {
+		&_show {
+			display: none !important;
+			@include mq("xs") {
+				display: inline-block !important;
+			}
+		}
+		&_hide {
+			display: inline-block !important;
+			@include mq("xs") {
+				display: none !important;
+			}
+		}
+	}
+	//~768
+	&.sm {
+		&_show {
+			display: none !important;
+			@include mq("sm") {
+				display: inline-block !important;
+			}
+		}
+		&_hide {
+			display: inline-block !important;
+			@include mq("sm") {
+				display: none !important;
+			}
+		}
+	}
+	//~1024
+	&.md {
+		&_show {
+			display: none !important;
+			@include mq("md") {
+				display: inline-block !important;
+			}
+		}
+		&_hide {
+			display: inline-block !important;
+			@include mq("md") {
+				display: none !important;
+			}
+		}
+	}
+	//1025~
+	&.lg {
+		&_show {
+			display: none !important;
+			@include mq("lg") {
+				display: inline-block !important;
+			}
+		}
+		&_hide {
+			display: inline-block !important;
+			@include mq("lg") {
+				display: none !important;
+			}
+		}
+	}
+	//1280~
+	&.xl {
+		&-show {
+			display: none !important;
+			@include mq("xl") {
+				display: block !important;
+			}
+		}
+		&-hide {
+			display: block !important;
+			@include mq("xl") {
+				display: none !important;
+			}
+		}
+	}
 }
 
 //テキスト関係クラス

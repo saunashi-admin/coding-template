@@ -130,7 +130,7 @@
 		}
 	}
 }
-&.-delay {
+.-delay {
 	&_sp {
 		@include mq("md") {
 			transition-delay: 200ms !important;
