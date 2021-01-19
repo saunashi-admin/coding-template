@@ -1,5 +1,3 @@
-# saunashi-temlate
-
 ## ディレクトリ構造
 ### 公開フォルダ これはいじらない！
 ```
@@ -24,11 +22,26 @@ src/
   scss/...
   js/...
     main.js→エントリーのみ、基本import
-    common.js
     ※どこまで分けるかは要検討
-  meta//// ファビコンなど→distにコピーする
+  meta/... ファビコンなど→distにコピーする
 　(pug/...) pugを使わない場合はフォルダ名をhtml,phpなどにしてdistにコピーする
 ```
+
+## タスクランナー
+npm-scriptsでもwebpackでもgulpでもなんでもいいです。  
+以下のタスクは行いましょう  
+* Browsersync等によるローカルサーバーの起動
+* 画像圧縮
+* scssのコンパイル
+* jsのバンドル（webpack）
+* jsのトランスパイル（babel）
+* css,jsファイルのminify
+
+### 導入を検討中
+* stylelint
+* eslint
+* prettier
+* husky, lint-stagedによるcommit時のlint, format
  
 ## scss
 
