@@ -6,7 +6,7 @@
 }
 
 //タイトルだけ。本文は絶対値でいい
-@mixin perfect_vw($max-width, $min-width, $max-size, $min-size, $property) {
+@mixin perfectVw($max-width, $min-width, $max-size, $min-size, $property) {
 	$a: ($max-size - $min-size) / ($max-width - $min-width);
 	$b: ($a * 100) + vw;
 	$c: ($min-size - $a * $min-width) + px;
@@ -20,13 +20,13 @@
 }
 // @include perfect_vw(1200, 320, 60, 14, font-size);
 
-@mixin se_vw($sp-size, $sp-width:375, $property:font-size) {
-  @include mq('se') {
-    #{$property}: calc((#{$sp-size} / #{$sp-width}) * 100vw);
-  }
+@mixin se_vw($sp-size, $sp-width: 375, $property: font-size) {
+	@include mq("se") {
+		#{$property}: calc((#{$sp-size} / #{$sp-width}) * 100vw);
+	}
 }
 
-@mixin responsive_box($paddingTop) {
+@mixin responsiveBox($paddingTop) {
 	position: relative;
 	padding-top: ($paddingTop) * 1%;
 	& > * {
@@ -42,11 +42,11 @@
 //   max-width: 750px;
 // }
 // .video_wrap {
-//   @include responsive_box(56);
+//   @include responsiveBox(56);
 // }
 
 //line-heightの上下カット
-@mixin lineHeight_crop($line-height) {
+@mixin lineHeightCrop($line-height) {
 	line-height: #{$line-height};
 	&::before {
 		display: block;
@@ -64,16 +64,18 @@
 	}
 }
 // p {
-//   @include lineHeight_crop(1.75);
+//   @include lineHeightCrop(1.75);
 // }
 
-@mixin inner($max-width: 1100) {
-	margin-right: auto;
-	margin-left: auto;
-	padding: 0 15px;
+//spはhover効果無効
+@mixin hover($flag: true) {
 	@include mq("lg") {
-		max-width: calc(#{$max-width}px + 60px); //デザイン＋左右padding
-		padding: 0 30px;
+		transition: 0.4s;
+		&:hover {
+			@if $flag == true {
+				opacity: 0.75;
+			}
+			@content;
+		}
 	}
 }
-//@include inner();
