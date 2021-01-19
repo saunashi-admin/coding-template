@@ -31,32 +31,11 @@ src/
 ```
  
 ## scss
-### scssファイル構成
-```
-scss/...
-    style.scss globする
-    順番
-      _reset
-      setting/**
-      _mixin
-      _base  共通のmixinや固有のもの
-      parts/**
-      layout/**
-      pages/**
-    _reset.scss→中身は今度考える
-    _mixin
-    _base/→bodyやヘルパークラス
-    pages/
-    layout/ ブロック系
-      _header.scss
-      _footer.scss
-      _breadcumbs.scss
-    parts/ エレメント系
-      _btn
-      _text  見出し
-      _animation
-```
-      
+
+### css設計
+2020年はBEM的なので統一していたが、拡張性に難があったため2021年1月現在が再検討中  
+末廣はflocss推し
+    
 ### メディアクエリ
 ```
   $breakpoints: (
@@ -81,35 +60,28 @@ scss/...
 `.xs_show`,`.xs_hide`
   
 ### mixin 
-- _base.scssに記載する。
-- 命名はアンスコで統一。
-- extendは極力書かない。
+#### 注意点
+- 命名はキャメルケース
+- extendは極力書かない
+
+#### みんなで使うmixin
 - mq
 - video
-- line-height
+- lineHeight
 - spのみhover
 - absoluteで中央寄せ
     
 ### reset
 - bodyに`line-height`は書かない、_text.scssに書く。
-- _reset.scssは末広resetを使用する。
+- _reset.scssは末廣resetを使用する。
     
 ### 変数
 #### color
 - 色は基本全て変数にする。
 `color_red_01`
 #### font 
-- `_font.scss` にフォント設定、フォントmixin
-	font-familyを変数に。$ff-フォント名。font-weightやletter-spacing等よく使う組み合わせはmixinにする。xdでいう「アセット」
-- `_text.scss` にはモジュールとしてのテキスト
-　`_font.scss`で作ったフォント組み合わせmixinを呼び出し、それに適宜スタイルを書き足してモジュールを作る。
-    
-### クラス命名
-#### 下層のクラス名
-- `ページ名_セクション_block--element`
-- bodyに `Page_ページ名` クラスをつける。wordpressはmainにつける。
-#### BEM 
-- `sm_show` とかもModifier ハイフンつける。
+- `_font.scss` に設定、
+	font-familyを変数に。$ff-フォント名
   
 ## 画像命名ルール
 - 画像の名前 アンスコ統一 1枚しかなくても01つける
