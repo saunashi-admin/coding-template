@@ -1,5 +1,12 @@
-## ディレクトリ構造
-### 公開フォルダ これはいじらない！
+## 0.ソースコード管理
+git, githubで行う。  
+
+さうなしのorganizationアカウントにprivateリポジトリ作る。  
+過去の保守案件も適宜githubに移行。
+https://github.com/saunashi-admin
+
+## 1.ディレクトリ構造
+### 1-1.公開フォルダ これはいじらない！
 ```
 dist/
   assets/
@@ -15,7 +22,7 @@ wp_theme
   ※assetsへのアクセスは関数 img
    homeURLにするなら関数に
 ```
-### 開発フォルダ
+### 1-2.開発フォルダ
 ```
 src/    
   img/...
@@ -27,7 +34,7 @@ src/
 　(pug/...) pugを使わない場合はフォルダ名をhtml,phpなどにしてdistにコピーする
 ```
 
-## タスクランナー
+## 2.タスクランナー
 npm-scriptsでもwebpackでもgulpでもなんでもいいです。  
 以下のタスクは行いましょう  
 * Browsersync等によるローカルサーバーの起動
@@ -37,19 +44,28 @@ npm-scriptsでもwebpackでもgulpでもなんでもいいです。
 * jsのトランスパイル（babel）
 * css,jsファイルのminify
 
-### 導入を検討中
+### 2-1.導入を検討中
 * stylelint
 * eslint
 * prettier
 * husky, lint-stagedによるcommit時のlint, format
  
-## scss
+## 3scss
 
-### css設計
-2020年はBEM的なので統一していたが、拡張性に難があったため2021年1月現在が再検討中  
-末廣はflocss推し
+### 3-1.css設計
+2020年はBEM的なので統一していたが、拡張性に難があったため2021年1月からFLOCSSを導入  
+クラスの命名時に迷った時は周りに確認。
+
+- 接頭辞のルールはFLOCSSを遵守する(l-,p-,c-,u-)
+- 同じデザインが3つ以上でてきたらcomponentにする(2つまではproject)
+- インナーはelementとして定義する（p-sectionName_inner）
+- ブロック分けはキャメルケース1個までとする。（× p-sectionNameName）
+- tr,th,td,dl,dt,ddはクラス無しでもOK。
+- JSを当てる記述はjs-接頭辞をつける。
+- 命名時略さない(txt→text,ttl→title)
+- Sassのmixinをキャメルケースにする。
     
-### メディアクエリ
+### 3-2.メディアクエリ
 ```
   $breakpoints: (
     'xs': 'screen and (max-width: 480px)',
@@ -68,35 +84,35 @@ npm-scriptsでもwebpackでもgulpでもなんでもいいです。
   }
 ```
   
-### ヘルパークラス
+### 3-3.ヘルパークラス
 全てのメディアクエリに対して作る
 `.xs_show`,`.xs_hide`
   
-### mixin 
-#### 注意点
+### 3-4.mixin 
+#### 3-4-1.注意点
 - 命名はキャメルケース
-- extendは極力書かない
+- extendは基本書かない
 
-#### みんなで使うmixin
+#### 3-4-2.みんなで使うmixin
 - mq
-- video
+- aspectRatio
 - lineHeight
 - spのみhover
 - absoluteで中央寄せ
     
-### reset
+### 3-4.reset
 - bodyに`line-height`は書かない、_text.scssに書く。
 - _reset.scssは末廣resetを使用する。
     
-### 変数
-#### color
+### 3-5.変数
+#### 3-5-1.color
 - 色は基本全て変数にする。
 `color_red_01`
-#### font 
+#### 3-5-2.font 
 - `_font.scss` に設定、
 	font-familyを変数に。$ff-フォント名
   
-## 画像命名ルール
+## 4.画像命名ルール
 - 画像の名前 アンスコ統一 1枚しかなくても01つける
 - spは `_sp`
 ```
@@ -120,26 +136,4 @@ npm-scriptsでもwebpackでもgulpでもなんでもいいです。
     icon_sns_facebook.svg
     icon_sns_line.svg
     icon_header.svg
-```
-## CSS設計ルール
-- 日時:2021/1/27
-- 平方、末廣、橋本(か）、橋本(よ）
-- 目的:FLOCSSをベースにした命名ルールを決定
-
-### メモ
-```
-- 接頭辞ルール のルールは遵守する(pー,l-など)
-- 同じデザインが3つ以上でてきたらンポーネント化する(2つの場合はオリジナルの記述でOK)
-- インナーはエレメントとして定義する
-- 設計時にp-で３回以上でたらコンポーネントする
-- セクションの中はエレメントの要を記述。
-- ブロック分けはキャメル1個までとする。
-- tr,th,td,dl,dt,ddはクラス無しでもOK。
-- JSを当てる記述はjs-から始まるクラス命名おこなう。
-- 命名時略さない(txt→text)
-- Sassのmixinをキャメルケースにする。
-```
-### 方針
-```
-- まずは案件ベースでFLOCSSを実施。クラスの命名時に迷った時は周りに確認。
 ```
