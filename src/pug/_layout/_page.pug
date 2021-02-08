@@ -1,17 +1,14 @@
-include ../_mixin/_breadcrumb
-block vars
-  include ../_config.pug
 doctype html
-html(lang='ja')
-  include ../_include/_head
-  body(id=pageId)
-    include ../_include/_header 
-    main.main
-      +breadcrumb([
-        ["Home", "/"],
-        ["About", "/about/"]
-      ])
-      block content
-    include ../_include/_footer
-    block script
-      include ../_include/_script
+block vars
+html(lang="ja")
+	head
+		include ../_include/_head
+	body
+		include ../_include/_header
+		main.l-main
+			include ../_include/_pageHead
+			block contents
+		include ../_include/_checked
+		include ../_include/_footer
+		include ../_include/_fixed-footer
+		script(src=assetsPath+"js/main.js")

@@ -1,0 +1,30 @@
+.c-button {
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid transparent;
+    color: #333;
+    display: inline-flex;
+    justify-content: center;
+    max-width: 300px;
+    padding: 1em;
+    transition: opacity 0.5s ease-out;
+    width: 100%;
+
+    &:focus,
+    &:hover {
+        opacity: 0.6;
+    }
+    //icon
+    &.-iconTab {
+        &:after {
+            content: '';
+            display: inline-block;
+        }
+    }
+}
+
+.c-button_txt {
+    display: inline-block;
+    font-family: $ff-mincho;
+    position: relative;
+}

@@ -1,26 +1,20 @@
-head
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0')
-		meta(http-equiv='X-UA-Compatible' content='ie=edge')
-		//- tel自動リンクを無効にする
-		meta(name="format-detection" content="telephone=no")
-		title #{page.title}
-		//- OGP
-		meta(property="og:type" content=key == "home" ? "website" : "article")
-		meta(property="og:description" content=page.description != "" ? page.description : DESCRIPTION)
-		meta(property="og:title" content=page.title)
-		meta(property="og:locale" content="ja_JP")
-		meta(property="og:url" content=URL)
-		meta(property="og:image" content=`${URL}assets/meta/ogp`)
-		meta(name='description' content=page.description != "" ? page.description : DESCRIPTION)
-		//- ファビコン
-		link(rel='apple-touch-icon', sizes='180x180', href=`${META_PATH}apple-touch-icon.png`)
-		link(rel='icon', type='image/png', sizes='32x32', href=`${META_PATH}favicon-32x32.png`)
-		link(rel='icon', type='image/png', sizes='16x16', href=`${META_PATH}favicon-16x16.png`)
-		//- link(rel='manifest', href=`${META_PATH}site.webmanifest`)
-		//- windowsタイルカラー
-		meta(name='msapplication-TileColor', content='#da532c')
-		//- ブラウザタブカラー
-		meta(name='theme-color', content='#ffffff')
-		//- CSS
-		link(rel="stylesheet", href=`${CSS_PATH}style.css`)
+meta(charset="UTF-8")
+meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
+meta(http-equiv="X-UA-Compatible" content="ie=edge")
+meta(name="format-detection" content="telephone=no")
+title #{page.title}
+meta(property="og:type" content="website")
+meta(property="og:description" content=page.description)
+meta(property="og:title" content=page.title)
+meta(property="og:locale" content="ja_JP")
+meta(property="og:url" content="/")
+meta(property="og:image" content=assetsPath+"meta/ogp")
+meta(name="description" content=page.description)
+link(rel="apple-touch-icon" sizes="180x180" href=assetsPath+"meta/apple-touch-icon.png")
+link(rel="icon" type="image/png" sizes="32x32" href=assetsPath+"meta/favicon-32x32.png")
+link(rel="icon" type="image/png" sizes="16x16" href=assetsPath+"meta/favicon-16x16.png")
+meta(name="msapplication-TileColor" content="#da532c")
+meta(name="theme-color" content="#ffffff")
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+link(rel="stylesheet" href=assetsPath+"css/style.css")
